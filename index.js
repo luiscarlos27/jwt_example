@@ -13,7 +13,7 @@ app.get('/login' , (req, res) =>{
              </head>
              <body>
                 <form method="POST" action="/auth">
-                    Nombre de usuario:<input type="text" name="text"><br/>
+                    Nombre de usuario:<input type="text" name="username"><br/>
                     Contraseña: <input type="password" name="password"><br/>
                     <input type="submit" value="Iniciar Sessión" />    
                 </form>
@@ -28,6 +28,8 @@ app.post('/auth', (req, res) =>{
     //consultar a la base de datos 
     // usuario y contrasenia
     const user = { username : username};
+    //console.log(req.body);
+    //console.log(username, password);
 
     const accessToken = generateAccessToken(user);
 
